@@ -24,11 +24,7 @@ async function getPokemon(id) {
     const hp = pokemon.stats[0].base_stat;
     const attack = pokemon.stats[1].base_stat;
     const defense = pokemon.stats[2].base_stat;
-    const specialAttack = pokemon.stats[3].base_stat;
-    const specialDefense = pokemon.stats[4].base_stat;
-    const speed = pokemon.stats[5].base_stat;
     const sprite = pokemon.sprites.front_default;
-    const weight = pokemon.weight;
     const type = [];
 
     //Para poder pegar todos os tipos dos pokemons
@@ -36,7 +32,7 @@ async function getPokemon(id) {
         type.push(pokemon.types[i].type.name);
     }
 
-    return { name, hp, attack, defense, specialAttack, specialDefense, speed, sprite, type, weight, movesets}
+    return { name, hp, attack, defense, sprite, type, movesets}
 }
 
 async function getMoveInfo(moveJson){
